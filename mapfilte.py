@@ -4,14 +4,32 @@ from functools import reduce
 def doble(c):
     return c+c
 
-lista = [1, 3, -1, 15, 9, 2]
+def esPar(x):
+    return x % 2 == 0
+
+lista = [1, 3, -1, 15, 9]
 
 
 listaDobles = map(lambda x: x*2, lista)
+listaDobles1 = map(doble, lista)
 
 listaPares = filter(lambda x: x % 2 == 0, lista)
+listaPares1 =map(esPar,lista)
 
-listaReduc = reduce(lambda x,y: x + y, lista)
+sumatorio = reduce(lambda x,y: x + y, lista)
+sumaDoble = reduce(lambda x,y: x + y * 2, lista)
 
-print(listaPares)
+sumaCien = reduce(lambda x,y : x + y, range(101))
 
+
+
+print(list(listaDobles))
+print(list(listaDobles))
+
+print(list(listaPares))
+print(list(listaPares1))
+
+print(sumatorio)
+print(sumaDoble)
+
+print(sumaCien)
